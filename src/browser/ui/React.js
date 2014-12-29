@@ -35,6 +35,7 @@ var ReactRef = require('ReactRef');
 var ReactServerRendering = require('ReactServerRendering');
 
 var assign = require('Object.assign');
+var findDOMNode = require('findDOMNode');
 var onlyChild = require('onlyChild');
 
 ReactDefaultInjection.inject();
@@ -69,6 +70,7 @@ var React = {
   },
   constructAndRenderComponent: ReactMount.constructAndRenderComponent,
   constructAndRenderComponentByID: ReactMount.constructAndRenderComponentByID,
+  findDOMNode: findDOMNode,
   render: render,
   renderToString: ReactServerRendering.renderToString,
   renderToStaticMarkup: ReactServerRendering.renderToStaticMarkup,
@@ -142,8 +144,6 @@ if (__DEV__) {
   }
 }
 
-// Version exists only in the open-source version of React, not in Facebook's
-// internal version.
-React.version = '0.13.0-alpha';
+React.version = '0.13.0-alpha.1';
 
 module.exports = React;
